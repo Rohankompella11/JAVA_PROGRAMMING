@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class LeapYearChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the date in the format (MM/DD/YYYY): ");
+        String date = scanner.nextLine();
+
+        // Extract the year from the date
+        int year = Integer.parseInt(date.substring(date.lastIndexOf('/') + 1));
+
+        // Check if the year is a leap year
+        boolean isLeapYear = checkLeapYear(year);
+
+        if (isLeapYear) {
+            System.out.println("Given year is a Leap Year");
+        } else {
+            System.out.println("Given year is a Non Leap Year");
+        }
+    }
+
+    public static boolean checkLeapYear(int year) {
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+}
