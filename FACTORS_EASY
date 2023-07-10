@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class FactorCount 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        int factorCount = countFactors(number);
+        System.out.println("Number of factors for " + number + ": " + factorCount);
+    }
+
+    public static int countFactors(int number) 
+    {
+        int factorCount = 0;
+
+        for (int i = 1; i <= number; i++) 
+        {
+            if (number % i == 0) 
+            {
+                factorCount++;
+            }
+        }
+        return factorCount;
+    }
+}
